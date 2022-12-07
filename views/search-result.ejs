@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>About <%=forumName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1><%=forumName%> : Searched result</h1>
+    <h2>View posts</h2>
+    <table>
+        <tr><th>Date</th><th>Topic</th><th>Title</th><th>Content</th></tr>
+        <% posts.forEach(function(post) { %>
+          <tr>
+            <td><%= post.post_date.toDateString() %> <%= post.post_date.getHours() %>:<%= post.post_date.getMinutes() %></td>
+            <td><%= post.topic_title %></td>
+            <td><%= post.post_title %></td>
+            <td><%= post.post_content %></td>
+          </tr>
+        <% }) %>    
+  </table>   
+  </body>
+</html>
